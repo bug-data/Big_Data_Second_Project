@@ -51,4 +51,28 @@ services:
       - "SPARK_MASTER=spark://spark-master:7077"
 
 
+  influx:
+    image: influxdb
+    ports:
+     - "8083:8083"
+     - "8086:8086"
+    environment:
+     - INFLUXDB_USER=user
+     - INFLUXDB_PASS=pass
+     - INFLUXDB_NAME=dbname
+     - PRE_CREATE_DB="dbname"
+
+
+  grafana:
+    image: grafana/grafana
+    environment:
+     - INFLUXDB_USER=user
+     - INFLUXDB_PASS=pass
+     - INFLUXDB_NAME=dbname
+    ports:
+     - "3000:3000"
+    depends_on:
+     - influx
+
+
   
