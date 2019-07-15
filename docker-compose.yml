@@ -9,6 +9,7 @@ services:
 
   kafka:
     image: wurstmeister/kafka:latest
+    container_name: kafka
     depends_on:
       - "zookeeper"
     ports:
@@ -24,6 +25,7 @@ services:
   iot-data-producer:
     build: 
       context: ./iot-data-producer
+    container_name: iot-source
     depends_on:
       - "kafka"
 
