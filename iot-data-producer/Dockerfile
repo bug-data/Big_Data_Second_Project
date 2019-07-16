@@ -1,8 +1,6 @@
 FROM python:3
 
-COPY dummy-producer.py .
-COPY iot-node-producer.py .
-COPY data/pantheon20190612-nodo8.csv .
+COPY dummy-producer.py iot-node-producer.py start-all-producers.sh data/* ./
 
 RUN pip install kafka-python && touch test.txt
 

@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-sudo docker exec -it iot-source python iot-node-producer.py 8
+sudo docker exec -d iot-source /bin/bash start-all-producers.sh
