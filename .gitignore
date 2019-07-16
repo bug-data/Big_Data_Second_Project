@@ -127,3 +127,4 @@ dmypy.json
 .DS_Store
 data/
 iot-data-producer/test.ipynb
+iot-data-producer/data/
