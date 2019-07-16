@@ -17,7 +17,7 @@ services:
     environment:
       KAFKA_ADVERTISED_HOST_NAME: kafka
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      KAFKA_CREATE_TOPICS: "test:1:1,node1:1:1,node2:1:1,node3:1:1,node4:1:1,node5:1:1,node6:1:1,node7:1:1,node8:1:1,node9:1:1,node10:1:1"
+      KAFKA_CREATE_TOPICS: "test:1:1,node1:1:1,node2:1:1,node3:1:1,node4:1:1,node5:1:1,node6:1:1,node7:1:1,node8:1:1,node9:1:1,node10:1:1,weather:1:1"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       
