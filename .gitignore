@@ -125,3 +125,4 @@ dmypy.json
 
 # other stuff
 .DS_Store
+data/
