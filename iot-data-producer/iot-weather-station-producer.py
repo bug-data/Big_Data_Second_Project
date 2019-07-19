@@ -50,7 +50,7 @@ def main():
             if len(batch) == BATCH_SIZE:
                 send_batch_data(producer, topic, batch)
                 batch=[]
-                time.sleep(10) 
+                time.sleep(2) 
 
     send_batch_data(producer, topic, batch)
 
