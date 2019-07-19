@@ -69,7 +69,6 @@ services:
       GF_AUTH_ANONYMOUS_ENABLED: true
       GF_AUTH_ANONYMOUS_ORG_NAME: Main Org.
       GF_AUTH_ANONYMOUS_ORG_NAME: Editor
-      org_name = Main Org
     ports:
      - "3000:3000"
     depends_on:
