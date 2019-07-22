@@ -59,9 +59,8 @@ services:
     environment:
      - INFLUXDB_USER=user
      - INFLUXDB_PASS=pass
-     - INFLUXDB_NAME=dbname
-     - PRE_CREATE_DB="dbname"
-
+     - INFLUXDB_DB=pantheon
+     
 
   grafana:
     image: grafana/grafana

@@ -45,7 +45,6 @@ if __name__ == "__main__":
     kvs = KafkaUtils.createDirectStream(ssc, ["node1","node2", "node3", "node4", "node5", "node7", "node8", "node9", "node10"], {"metadata.broker.list": "kafka:9092"})
 
     client = InfluxDBClient(host='influx', port=8086)
-    client.create_database('pantheon')
     client.switch_database('pantheon')
     lines = kvs.map(lambda x: read_json_file(x)).reduceByKey(lambda x,y: reduce_json(x,y)).map(lambda x: map_save_influx(x))
 
