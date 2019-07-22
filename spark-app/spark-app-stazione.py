@@ -94,6 +94,7 @@ def map_save_influx(x):
 
 if __name__ == "__main__":
     sc = SparkContext(appName="PythonStreamingDirectKafkaWordCount")
+    sc.setLogLevel("ERROR")
     ssc = StreamingContext(sc, 2)
 
     kvs = KafkaUtils.createDirectStream(ssc, ["weather"], {"metadata.broker.list": "kafka:9092"})

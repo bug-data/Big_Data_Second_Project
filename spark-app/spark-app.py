@@ -40,6 +40,7 @@ def map_save_influx(x):
     return x
 if __name__ == "__main__":
     sc = SparkContext(appName="PythonStreamingDirectKafkaWordCount")
+    sc.setLogLevel("ERROR")
     ssc = StreamingContext(sc, 2)
 
     kvs = KafkaUtils.createDirectStream(ssc, ["node1","node2", "node3", "node4", "node5", "node7", "node8", "node9", "node10"], {"metadata.broker.list": "kafka:9092"})
