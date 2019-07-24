@@ -1,0 +1,56 @@
+\documentclass[titlepage]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage[T1]{fontenc}
+
+%import tex files in main.tex
+\usepackage{import}
+
+%positioning float
+\usepackage{float}
+
+%import images
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+%document header
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\leftmark}
+\cfoot{\thepage}
+
+\usepackage{csquotes} %image support
+\usepackage{verbatim} %multiline comments
+
+%insert links 
+\usepackage[hidelinks]{hyperref}
+
+\title{\textbf{Hazelnutella: un sistema di monitoraggio dei dati provenienti da sensori IoT}}
+\author{Jerin George Mathew, Luca Pasquini \thanks{Gruppo Bug Data}}
+\date{Luglio 2019}
+
+\begin{document}
+
+\maketitle
+
+\pagenumbering{arabic}
+\tableofcontents
+\clearpage
+
+\import{sections/}{section1.tex}
+\clearpage
+
+\import{sections/}{section2.tex}
+\clearpage
+
+\import{sections/}{section3.tex}
+\clearpage
+
+\import{sections/}{section4.tex}
+\clearpage
+
+\import{sections/}{section5.tex}
+\clearpage
+
+\end{document}

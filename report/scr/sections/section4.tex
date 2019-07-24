@@ -1,0 +1,11 @@
+\section{Conclusioni e sviluppi futuri}
+In conclusione è stata realizzata una pipeline di big data per il monitoraggio in tempo reale di dati provenienti da sensori e da una stazione meteo installati in un noccioleto nel comune di Caprarola (Viterbo) nel contesto del progetto PANTHEON.\par
+
+L'architettura realizzata consiste in una variante di quella proposta nel progetto PANTHEON per la realizzazione del DSP layer, in cui viene impiegato MongoDB per memorizzare i dati raccolti dai sensori (al posto di InfluxDB).\par
+
+Per quanto riguarda gli sviluppi futuri, questi possono essere riassunti nei seguenti punti:
+
+\begin{itemize}
+    \item Come detto in precedenza, nel documento relativo a PANTHEON viene proposto MongoDB come database da usare per memorizzare i dati provenienti dai sensori e i dati provenienti dal DCP layer. Un possibile sviluppo futuro potrebbe consistere nel valutare le prestazioni di MongoDB e InfluxDB nel contesto del progetto PANTHEON per stabilire quale possa essere la migliore soluzione. Occorre anche precisare come è possibile che i dati provenienti dal DCP layer possano non essere delle serie temporali, nel qual caso InfluxDB mal si presterebbe come strumento di memorizzazione dei dati nel DSP layer a differenza di MongoDB che offre maggiore flessibilità. In questo caso si potrebbe pensare di usare due database, uno per memorizzare i dati provenienti dai sensori, come InfluxDB, e uno per ricevere i dati processati dal DCP layer, come ad esempio MongoDB.
+    \item Valutare l'uso di Apache Beam per il processamento dei dati nel processing layer del sistema realizzato. Apache Beam offre un modello di processamento dei dati (sia stream che batch) che può essere poi eseguito su diversi runtime, come ad esempio Spark, \textit{Google Cloud Dataflow}, \textit{Apache Flink}, \textit{Apache Samza}, con la possibilità dunque di poter poi (eventualmente) migrare da Spark ad una differente tecnologia a seconda delle esigenze.
+\end{itemize}{}
