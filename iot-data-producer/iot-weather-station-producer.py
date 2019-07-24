@@ -41,18 +41,14 @@ def main():
     
 
     with open(filename) as csvFile:
-        batch = []
         reader = csv.DictReader(csvFile, delimiter=';')
         for row in reader:
             jsonString = json.dumps(row)
             jsonCleanData = remove_empty_values(json.loads(jsonString))
-            batch.append(json.dumps(jsonCleanData))
-            if len(batch) == BATCH_SIZE:
-                send_batch_data(producer, topic, batch)
-                batch=[]
-                time.sleep(2) 
+            jsonCleanData = json.dumps(jsonCleanData))
+            send_data(producer, topic, jsonCleanData)
+            time.sleep(1) 
 
-    send_batch_data(producer, topic, batch)
 
 if __name__ == "__main__":
     main()

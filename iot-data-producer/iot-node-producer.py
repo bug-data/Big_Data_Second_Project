@@ -26,7 +26,6 @@ def send_batch_data(producerInstance, topicName, batch):
     return
 
 def main():
-    
     NODE_ID = sys.argv[1]
     filename = FILENAME_FMT.format(NODE_ID)
     topic = TOPIC_FMT.format(NODE_ID)
@@ -37,16 +36,12 @@ def main():
     
     # read csv data from a single node
     with open(FILENAME_FMT.format(NODE_ID)) as csvFile:
-        batch = []
         reader = csv.DictReader(csvFile)
         for row in reader:
-            batch.append(json.dumps(row))
-            if len(batch) == BATCH_SIZE:
-                send_batch_data(producer, topic, batch)
-                batch=[]
-                time.sleep(2) 
+            jsonRow = json.dumps(row))
+            send_data(producer, topic, jsonRow)
+            time.sleep(1) 
 
-    send_batch_data(producer, topic, batch)
 
 if __name__ == "__main__":
     main()
