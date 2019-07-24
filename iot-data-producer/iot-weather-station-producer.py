@@ -45,7 +45,7 @@ def main():
         for row in reader:
             jsonString = json.dumps(row)
             jsonCleanData = remove_empty_values(json.loads(jsonString))
-            jsonCleanData = json.dumps(jsonCleanData))
+            jsonCleanData = json.dumps(jsonCleanData)
             send_data(producer, topic, jsonCleanData)
             time.sleep(1) 
 

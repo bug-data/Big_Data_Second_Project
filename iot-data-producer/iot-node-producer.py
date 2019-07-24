@@ -38,7 +38,7 @@ def main():
     with open(FILENAME_FMT.format(NODE_ID)) as csvFile:
         reader = csv.DictReader(csvFile)
         for row in reader:
-            jsonRow = json.dumps(row))
+            jsonRow = json.dumps(row)
             send_data(producer, topic, jsonRow)
             time.sleep(1) 
 
